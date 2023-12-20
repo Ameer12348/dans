@@ -1,0 +1,101 @@
+
+.top-nav {
+    background-color: #6cbe02;
+    font-size: 15px;
+    height: 30px;
+}
+.logout-div{
+    overflow: hidden;
+    max-height: 0px;
+    transition: all 400ms ease-in-out;
+}
+.username-button:focus ~ .logout-btn{
+    display: inline-block;
+    max-height: 300px;
+}
+.log-btn{
+    z-index: 100000;
+
+}
+
+
+
+
+.main-nav {
+    h1.logo{
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .nav-links ul li a {
+        font-size: 18px;
+
+    }
+    div.icons a , div.icons button{
+        font-size: 25px;
+        border: none;
+
+    }
+}
+.nav-links{
+    box-shadow: none !important;
+}
+.search-field{
+width: 0px !important;
+overflow: hidden;
+transition:all  0.2s ease-in-out ;
+opacity: 0;
+}
+.category-div{
+    overflow: hidden;
+    transition: all 0.4s;
+    width: 220px;
+    max-height: 0px;
+    z-index: 10000;
+}
+.category-btn{
+    transition: all 0.4s;
+}
+.category-btn:focus ~ .category-div{
+    max-height: 400px;
+}
+@media (width>=768px) {
+    .category-div{
+        position: absolute;
+    }
+    
+}
+
+@media (width <768px) {
+
+    .nav-links{
+        z-index: 2000;
+        position: fixed;
+        flex-direction: column;
+        background-color: #fff;
+        color: rgba(0, 0, 0, 0.307);
+        top: 10%;
+        left: -350px;
+        width: 0px;
+        overflow: hidden;
+        height: 100vh;
+        justify-content: start !important;
+        transition: all 0.5s ease-in-out;
+        
+    }
+    .nav-links ul{
+        flex-direction: column;
+        padding: 0px;
+        li{
+            margin: 10px 0px;
+        }
+    }
+ 
+    .icons{
+        flex-direction: row;
+        background-color: white;
+    }
+    
+}
+
+
+
