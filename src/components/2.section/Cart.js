@@ -6,12 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
     const [cart,setCart] = useState([null])
-    const [message1,setMessage] = useState('')
     const user = localStorage.getItem('user')
     const user1 =   JSON.parse(user)
     let total1 = 0
     useEffect(()=>{
-        fetch(`https://backendserver.cyclic.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
+        fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
+        console.log(cart);
+
     },[])
     const navigate = useNavigate()
   return (
@@ -47,13 +48,12 @@ const Cart = () => {
                                                 <span><del>${ele.price}</del>  <strong>Price:</strong> ${price} </span>
                                                 <button style={{fontSize:'20px'}} className='border border text-danger' onClick={()=>{
                                                     const filtercart = cart.filter(elem=> ele._id !== elem._id)
-                                                    fetch(`https://backendserver.cyclic.app/edituser/${user1.userName}`,{
+                                                    fetch(`https://backend-ten-mocha.vercel.app/edituser/${user1.userName}`,{
                                                         method:'PUT',
                                                         body: JSON.stringify({cart:filtercart}),
                                                         headers: {'Content-Type': 'application/json'}
-                                                    }).then(res=>res.json()).then(res=>{
+                                                    }).then(res=>res.json()).then(async(res)=>{
                                                         if (res.message === 'updated') {
-                                                            setMessage('item deleted successfully')  
                                                             toast('item deleted successfully', {
                                                                 position: "top-right",
                                                                 autoClose: 5000,
@@ -63,12 +63,11 @@ const Cart = () => {
                                                                 draggable: true,
                                                                 progress: undefined,
                                                                 theme: "light",
-                                                                })  
-
+                                                                })
+                                                                fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
                                                                   }
                                                             
                                                     })
-                                                    fetch(`https://backendserver.cyclic.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
                                                 }}><AiOutlineDelete /></button>
                                                 
                                             </div>

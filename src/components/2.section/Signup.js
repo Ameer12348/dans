@@ -50,7 +50,7 @@ const Signup = () => {
       <button className='btn d-block mx-auto mt-3 w-25' onClick={async(e)=>{
         e.preventDefault();
         if (input3.current.value === input4.current.value) {
-       fetch('https://backendserver.cyclic.app/register',{
+       fetch('https://backend-ten-mocha.vercel.app/register',{
             method: 'POST',
             body:JSON.stringify({userName:input1.current.value,email:input2.current.value,password:input3.current.value}),
             headers: {'Content-Type': 'application/json'}

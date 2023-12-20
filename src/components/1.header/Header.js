@@ -52,7 +52,7 @@ const Header = () => {
         {/*---------------------  top navigation bar end ---------------------*/}
 
         {/*---------------------  main navigation bar start ---------------------*/}
-        <div className="main-nav">
+        <div className="main-nav" id="nav">
             <nav className="container justify-content-between align-items-center d-flex position-relative px-4">
                 <Link to='/'  className="text-decoration-none text-dark "><h1 className="logo">Dans</h1></Link>
                 <div ref={navcollapse} className="d-flex justify-content-between align-items-start align-items-md-center flex-grow-1 nav-links">

@@ -40,7 +40,7 @@ const Login = () => {
     <div >
       <button className='btn d-block mx-auto mt-3 w-25' style={{backgroundColor:'#6cbe02',color:'white'}} onClick={(e)=>{
         e.preventDefault();
-        fetch('https://backendserver.cyclic.app/login',{
+        fetch('https://backend-ten-mocha.vercel.app/login',{
             method:'PUT',
             body: JSON.stringify({userName:input1.current.value,password:input2.current.value}),
             headers: {'Content-Type': 'application/json'}

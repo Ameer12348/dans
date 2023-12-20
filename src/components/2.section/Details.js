@@ -9,8 +9,8 @@ const Details = () => {
     const user1 =   JSON.parse(user);
     const {id} = useParams()
     useEffect(()=>{
-        fetch(`https://backendserver.cyclic.app/products/${id}`).then(res=>res.json()).then(result=>setProduct(result))
-        fetch(`https://backendserver.cyclic.app/getuser/${user1.userName}`).then(res=>res.json()).then(result=>setUserDetail(result))
+        fetch(`https://backend-ten-mocha.vercel.app/products/${id}`).then(res=>res.json()).then(result=>setProduct(result))
+        fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(result=>setUserDetail(result))
     },[])
   return (
     <>
