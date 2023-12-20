@@ -54,6 +54,8 @@ const Cart = () => {
                                                         headers: {'Content-Type': 'application/json'}
                                                     }).then(res=>res.json()).then(async(res)=>{
                                                         if (res.message === 'updated') {
+                                                            fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
+                                                            
                                                             toast('item deleted successfully', {
                                                                 position: "top-right",
                                                                 autoClose: 5000,
@@ -64,7 +66,6 @@ const Cart = () => {
                                                                 progress: undefined,
                                                                 theme: "light",
                                                                 })
-                                                                fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
                                                                   }
                                                             
                                                     })
