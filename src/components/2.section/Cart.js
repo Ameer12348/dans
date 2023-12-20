@@ -11,7 +11,7 @@ const Cart = () => {
     const user1 =   JSON.parse(user)
     let total1 = 0
     useEffect(()=>{
-        fetch(`https://backendserver.cyclic.app/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
+        fetch(`https://backendserver.cyclic.app/${user1.userName}`).then(res=>res.json()).then(res=>alert(res.cart))
         console.log(cart);
     },[cart])
     const navigate = useNavigate()
