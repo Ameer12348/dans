@@ -25,6 +25,8 @@ const Search = () => {
                     setData(filterdata)
             }
             });
+            window.scrollTo(0,0)
+
   }, [loader,name]);
 
 

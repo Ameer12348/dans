@@ -11,6 +11,7 @@ const Details = () => {
     useEffect(()=>{
         fetch(`https://backend-ten-mocha.vercel.app/products/${id}`).then(res=>res.json()).then(result=>setProduct(result))
         fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(result=>setUserDetail(result))
+        window.scrollTo(0,0)
     },[])
   return (
     <>

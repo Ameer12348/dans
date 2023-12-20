@@ -13,6 +13,8 @@ const Category = () => {
       fetch(`https://backend-ten-mocha.vercel.app/products/category/${param.category}`)
         .then((res) => res.json())
         .then((res) => setData(res));
+        window.scrollTo(0,0)
+
     }, [loader,param.category]);
     
     return (

@@ -12,6 +12,8 @@ const Cart = () => {
     useEffect(()=>{
         fetch(`https://backend-ten-mocha.vercel.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
         console.log(cart);
+        window.scrollTo(0,0)
+
 
     },[])
     const navigate = useNavigate()

@@ -1,4 +1,4 @@
-import React, { useRef} from 'react'
+import React, { useEffect, useRef} from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 import './Signup.scss'
 import { Link, useNavigate } from 'react-router-dom'
@@ -10,6 +10,10 @@ const Signup = () => {
   const input4 = useRef()
   const togglepassword = useRef()
   const navigate = useNavigate()
+  useEffect(()=>{
+    window.scrollTo(0,0)
+
+  })
   return (
     <>
     <div className="container">
