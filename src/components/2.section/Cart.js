@@ -12,8 +12,7 @@ const Cart = () => {
     let total1 = 0
     useEffect(()=>{
         fetch(`https://backendserver.cyclic.app/getuser/${user1.userName}`).then(res=>res.json()).then(res=>setCart(res.cart))
-        console.log(cart);
-    },[cart])
+    },[])
     const navigate = useNavigate()
   return (
     <div style={{minHeight:'70vh'}} className='container p-1 my-5 '>

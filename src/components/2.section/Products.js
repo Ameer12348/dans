@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Products.scss'
-import { CiStar } from "react-icons/ci";
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import the styles
 
 
 const Products = () => {
@@ -33,6 +33,7 @@ const Products = () => {
                 </div>
                 {ele.discount ?<span className="position-absolute discount-view rounded rounded-pill bg-warning bg-gradient text-dark">-{ele.discount}%</span>:<></>}
                 <span style={{fontSize:'12px'}}>{ele.category} </span>
+                <p>  </p>
                 <p style={{fontSize:'16px'}}>{title} </p>
                 <h4 style={{fontSize:'16px'}}>{ele.discount ? <><del style={{fontSize:'12px'}}>${ele.price}</del> ${price}</>:<>${price}</>} </h4>
                 </Link></div>
