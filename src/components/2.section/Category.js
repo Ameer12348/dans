@@ -19,7 +19,7 @@ const Category = () => {
     
     return (
       <div className="container my-5" style={{minHeight:'50vh'}}>
-      <div className="row row-cols-1 row-cols-sm-2 g-5 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+      <div className="row row-cols-1 row-cols-sm-2 g-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
       {
         data.map(ele=>{
           const rating = Math.round(ele.rating.rate*10)/10
