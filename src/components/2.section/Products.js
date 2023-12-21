@@ -17,6 +17,7 @@ const Products = () => {
     <div className="container my-5" style={{minHeight:'50vh'}}>
     <div className="row row-cols-1 row-cols-sm-2 g-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     {
+      data.length >0 ?
       data.map(ele=>{
         const rating = Math.round(ele.rating.rate*10)/10
         const title = ele.title.length >=20 ? ele.title.slice(0,20) +'...':ele.title ;
@@ -56,7 +57,10 @@ const Products = () => {
 
                  return<></>
             }
-        })
+        }): 
+        <div id='loader'>
+        
+        </div>
       
     }    
     </div>

@@ -18,7 +18,8 @@ const Cart = () => {
     },[])
     const navigate = useNavigate()
   return (
-    <div style={{minHeight:'70vh'}} className='container p-1 my-5 '>
+        cart[0] !== null ? 
+        <div style={{minHeight:'70vh'}} className='container p-1 my-5 '>
         {cart.length>0? <table className='table text-center  w-100'>
             <thead >
                 <tr >
@@ -99,6 +100,10 @@ const Cart = () => {
 
     
     </div>
+    :<div id='loader' style={{margin:'35vh auto'}}>
+        
+    </div>
+    
   )
 }
 

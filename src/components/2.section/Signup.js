@@ -9,6 +9,7 @@ const Signup = () => {
   const input3 = useRef()
   const input4 = useRef()
   const togglepassword = useRef()
+  const login = useRef()
   const navigate = useNavigate()
   useEffect(()=>{
     window.scrollTo(0,0)
@@ -51,7 +52,9 @@ const Signup = () => {
     }} className='p-2' style={{height:'16px',width:'16px'}} />
     <label htmlFor="togglepass" className='p-2'>show password</label>
     </div>
-      <button className='btn d-block mx-auto mt-3 w-25' onClick={async(e)=>{
+      <button type='submit' className='btn d-block mx-auto mt-3 w-25' ref={login} onClick={async(e)=>{
+        login.current.innerHTML = '<div  id="login-loader"></div>' 
+
         e.preventDefault();
         if (input3.current.value === input4.current.value) {
        fetch('https://backend-ten-mocha.vercel.app/register',{
@@ -75,12 +78,11 @@ const Signup = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            })})
+            })
+            login.current.innerHTML = "Signup"
+          }
             
-            
-          
-
-
+            )
         }
         else{
           toast('your both passwords are not matching', {

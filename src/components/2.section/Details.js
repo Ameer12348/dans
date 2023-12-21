@@ -16,7 +16,9 @@ const Details = () => {
   return (
     <>
     {
-        product && userDetail ? <Productdetails userDetail={userDetail} productdetail={product} /> : <></>
+        product && userDetail ? <Productdetails userDetail={userDetail} productdetail={product} /> : <div id='loader' style={{margin:'50vh auto'}}>
+          
+        </div>
     }
     </>
   )

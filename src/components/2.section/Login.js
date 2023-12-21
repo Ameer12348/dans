@@ -5,14 +5,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const Login = () => {
     const input1 = useRef()
   const input2 = useRef()
   const navigate =  useNavigate()
   const togglepassword = useRef()
+  const login = useRef()
   useEffect(()=>{
     window.scrollTo(0,0)
-
   })
 
   return (
@@ -42,7 +43,8 @@ const Login = () => {
     <label htmlFor="togglepass" className='p-2'>show password</label>
     </div>
     <div >
-      <button className='btn d-block mx-auto mt-3 w-25' style={{backgroundColor:'#6cbe02',color:'white'}} onClick={(e)=>{
+      <button type='submit' className='btn d-block mx-auto mt-3 w-25' ref={login} style={{backgroundColor:'#6cbe02',color:'white',textAlign:'center'}} onClick={(e)=>{
+        login.current.innerHTML = '<div  id="login-loader"></div>' 
         e.preventDefault();
         fetch('https://backend-ten-mocha.vercel.app/login',{
             method:'PUT',
@@ -63,6 +65,7 @@ const Login = () => {
                 progress: undefined,
                 theme: "light",
                 })
+                login.current.innerHTML = "Login"
         })
         
       }}>Login</button>
