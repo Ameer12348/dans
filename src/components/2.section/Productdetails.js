@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import  './Productdetails.scss'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 const Productdetails = ({productdetail,userDetail}) => {
+    const cartbtn = useRef()
     const user = localStorage.getItem('user')
     const user1 =   JSON.parse(user)
     const price =  productdetail.discount ? Math.round((productdetail.price - productdetail.price*(productdetail.discount/100))*10)/10 : productdetail.price;
@@ -30,14 +31,16 @@ const Productdetails = ({productdetail,userDetail}) => {
 
                         <button type="button" class="btn btn-outline-success" onClick={()=>{quantity<9?setQuantity(quantity+1):setQuantity(quantity)}}>+</button>
                     </div>
-                    <button className='btn  btn-success mx-3' onClick={()=>{
+                    <button ref={cartbtn} className='btn  btn-success mx-3 ' onClick={()=>{
                         if (quantity>0) {
+                            cartbtn.current.innerHTML = '<div id="cart-loader" ></div>'
                             
                             fetch(`https://backend-ten-mocha.vercel.app/edituser/${user1.userName}`,{
                                 method:'PUT',
                                 body: JSON.stringify({cart:[...userDetail.cart,{quantity:quantity,...productdetail}]}),
                                 headers: {'Content-Type': 'application/json'}
                             }).then(res=>res.json()).then(res=>{
+                            cartbtn.current.innerHTML = 'Add to Cart'
                                 if (res.message === 'updated') {
                                     toast('item added to cart successfully', {
                                         position: "top-right",

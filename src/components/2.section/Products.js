@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Products.scss'
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Import the styles
