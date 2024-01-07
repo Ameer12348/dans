@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import  './Productdetails.scss'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const Productdetails = ({productdetail,userDetail}) => {
     const cartbtn = useRef()
@@ -15,6 +16,10 @@ const Productdetails = ({productdetail,userDetail}) => {
         let ratecounter = 0
   return (
     <div className='container'>
+    <Helmet>
+    <meta name='description' content={productdetail.description}/>
+    <title> Dans {productdetail.title} </title>
+    </Helmet>
         <div className="row mt-5">
             <div className='col-sm-4 position-relative' >
                 <img  src={productdetail.image}  className='w-100  img-detail' alt="" />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { AiOutlineDelete } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify'
@@ -20,6 +21,9 @@ const Cart = () => {
   return (
         cart[0] !== null ? 
         <div style={{minHeight:'70vh'}} className='container p-1 my-5 '>
+        <Helmet>
+        <title>Cart</title>
+        </Helmet>
         {cart.length>0? <table className='table text-center  w-100'>
             <thead >
                 <tr >

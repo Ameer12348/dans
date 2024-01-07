@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import './Products.scss'
+import { Helmet } from "react-helmet";
 
 const Search = () => {
     const {name} = useParams()
@@ -33,6 +34,9 @@ const Search = () => {
   
   return (
     <div className="container my-5" style={{minHeight:'50vh'}}>
+    <Helmet >
+    <title>{name} | Search</title>
+    </Helmet>
     <div className="row row-cols-1 row-cols-sm-2 g-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     {data.length >0 ?
       data.map(ele=>{
