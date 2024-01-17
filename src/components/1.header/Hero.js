@@ -1,7 +1,5 @@
 import { useEffect } from 'react'
 import './Hero.scss'
-import hero1 from './images/hero-1.png'
-import hero2 from './images/hero-2.png'
 import glide from '@glidejs/glide'
 
 const Hero = () => {
@@ -31,7 +29,6 @@ useEffect(()=>{
                 <p>Trending from men's and women's  style collection</p>
               </div>
               <div className="right">
-                <img className="img1"  src={hero1}  alt='hero img'/>
               </div>
             </div>
           </li>
@@ -43,7 +40,6 @@ useEffect(()=>{
                 <p>Trending from men's and women's  style collection</p>
               </div>
               <div className="right">
-                <img className="img2" src={hero2} alt='hero img' />
               </div>
             </div>
           </li>
